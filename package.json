@@ -1,7 +1,7 @@
 {
   "name": "electron-contextmenu-middleware",
   "version": "0.0.1",
-  "description": "",
+  "description": "Build `electron` context menus composing multiple middlewares functions.",
   "repository": "parro-it/electron-contextmenu-middleware",
   "license": "MIT",
   "author": "parro-it",
