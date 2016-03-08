@@ -51,17 +51,17 @@ Append or insert your menu items to the array in the position you want (or remov
 
 ```js
 export default function ({elm, menu, click}, next) {
-  {
-      label: 'Inspect element',
-      click: () => {
-        require('electron').remote
-          .getCurrentWindow()
-          .inspectElement(
-            click.x,
-            click.y
-          );
-      }
+  menu.push({
+    label: 'Inspect element',
+    click: () => {
+      require('electron').remote
+        .getCurrentWindow()
+        .inspectElement(
+          click.x,
+          click.y
+        );
     }
+  });
 }
 ```
 
