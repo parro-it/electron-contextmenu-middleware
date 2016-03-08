@@ -27,5 +27,8 @@
   },
   "files": [
     "index.js"
-  ]
+  ],
+  "dependencies": {
+    "comws": "^2.0.1"
+  }
 }
