@@ -2,9 +2,6 @@
 
 const CoMws = require('comws');
 let context = new CoMws();
-const electron = require('electron');
-const remote = electron.remote;
-const Menu = remote.Menu;
 
 
 function run(elm, click) {
@@ -15,6 +12,10 @@ function run(elm, click) {
 }
 
 function onContextmenu(e) {
+  const electron = require('electron');
+  const remote = electron.remote;
+  const Menu = remote.Menu;
+
   e.preventDefault();
   e.stopPropagation();
 
