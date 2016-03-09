@@ -6,7 +6,8 @@
   "license": "MIT",
   "author": "parro-it",
   "scripts": {
-    "test": "eslint . && node test | faucet"
+    "test": "eslint . && node test | faucet || echo failed",
+    "watch": "nodemon --exec 'npm run test || echo failed'"
   },
   "keywords": [],
   "engines": {
@@ -29,6 +30,6 @@
     "index.js"
   ],
   "dependencies": {
-    "comws": "^2.0.1"
+    "comws": "^2.0.2"
   }
 }
