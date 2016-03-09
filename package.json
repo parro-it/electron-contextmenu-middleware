@@ -7,7 +7,8 @@
   "author": "parro-it",
   "scripts": {
     "test": "eslint . && node test | faucet || echo failed",
-    "watch": "nodemon --exec 'npm run test || echo failed'"
+    "watch": "nodemon --exec 'npm run test || echo failed'",
+    "start": "electron example.js"
   },
   "keywords": [],
   "engines": {
@@ -20,6 +21,7 @@
     ]
   },
   "devDependencies": {
+    "electron-prebuilt": "^0.36.10",
     "eslint": "^1.10.3",
     "eslint-config-features": "^1.1.5",
     "eslint-config-js": "^4.0.0",
