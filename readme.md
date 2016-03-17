@@ -70,7 +70,7 @@ export default function ({elm, menu, click}, next) {
 
 * [electron-input-menu](https://github.com/parro-it/electron-input-menu) - Context menu for [electron](https://github.com/atom/electron) input elements.
 
-* [debug-menu](https://github.com/parro-it/debug-menu) - Chrome-like \"inspect element\" context-menu.
+* [debug-menu](https://github.com/parro-it/debug-menu) - Chrome-like "inspect element" context-menu.
 
 
 # License
