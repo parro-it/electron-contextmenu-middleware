@@ -15,16 +15,15 @@ function onContextmenu(e) {
   const electron = require('electron');
   const remote = electron.remote;
   const Menu = remote.Menu;
-
-  e.preventDefault();
-  e.stopPropagation();
-
   const click = {x: e.x, y: e.y};
   const elm = e.target;
 
   run(elm, click)
     .then(template => {
       if (template.length > 0) {
+        e.preventDefault();
+        e.stopPropagation();
+        
         const menu = Menu.buildFromTemplate(template);
         menu.popup(remote.getCurrentWindow(), click.x, click.y);
       }
