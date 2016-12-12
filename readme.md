@@ -32,7 +32,7 @@ npm install --save electron-contextmenu-middleware
   const context = require('electron-contextmenu-middleware');
 
   const input = require('electron-input-menu');
-  const debug = require('debug-menu').contextMdw;
+  const debug = require('debug-menu').middleware;
 
   context.use(input);
   context.use(debug);
