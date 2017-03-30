@@ -5,53 +5,53 @@ let context = new CoMws();
 
 
 function run(elm, click) {
-  const menu = [];
-  return context
-    .run({menu, elm, click})
-    .then(() => menu);
+	const menu = [];
+	return context
+		.run({menu, elm, click})
+		.then(() => menu);
 }
 
 function onContextmenu(e) {
-  const electron = require('electron');
-  const remote = electron.remote;
-  const Menu = remote.Menu;
-  const click = {x: e.x, y: e.y};
-  const elm = e.target;
+	const electron = require('electron');
+	const remote = electron.remote;
+	const Menu = remote.Menu;
+	const click = {x: e.x, y: e.y};
+	const elm = e.target;
 
-  run(elm, click)
-    .then(template => {
-      if (template.length > 0) {
-        e.preventDefault();
-        e.stopPropagation();
-        
-        const menu = Menu.buildFromTemplate(template);
-        menu.popup(remote.getCurrentWindow(), click.x, click.y);
-      }
+	run(elm, click)
+		.then(template => {
+			if (template.length > 0) {
+				e.preventDefault();
+				e.stopPropagation();
 
-    })
-    .catch(err => process.stderr.write(err.stack + '\n'));
+				const menu = Menu.buildFromTemplate(template);
+				menu.popup(remote.getCurrentWindow(), click.x, click.y);
+			}
+
+		})
+		.catch(err => process.stderr.write(err.stack + '\n'));
 }
 
 exports.reset = function reset() {
-  context = new CoMws();
+	context = new CoMws();
 };
 
 exports.use = function use(mw) {
-  if (typeof mw !== 'function') {
-    throw new Error('Function middleware argument required.');
-  }
-  context.use(mw);
-  return mw;
+	if (typeof mw !== 'function') {
+		throw new Error('Function middleware argument required.');
+	}
+	context.use(mw);
+	return mw;
 };
 
 exports.activate = function activate() {
-  if (document.body) {
-    document.body.addEventListener('contextmenu', onContextmenu);
-  } else {
-    document.addEventListener('DOMContentLoaded', () => {
-      document.body.addEventListener('contextmenu', onContextmenu);
-    });
-  }
+	if (document.body) {
+		document.body.addEventListener('contextmenu', onContextmenu);
+	} else {
+		document.addEventListener('DOMContentLoaded', () => {
+			document.body.addEventListener('contextmenu', onContextmenu);
+		});
+	}
 
 };
 
