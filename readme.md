@@ -1,5 +1,7 @@
 # electron-contextmenu-middleware
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/parro-it/electron-contextmenu-middleware.svg)](https://greenkeeper.io/)
+
 > Build `electron` context menus composing multiple middlewares functions.
 
 [![Travis Build Status](https://img.shields.io/travis/parro-it/electron-contextmenu-middleware.svg)](http://travis-ci.org/parro-it/electron-contextmenu-middleware)
