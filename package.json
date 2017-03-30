@@ -21,10 +21,10 @@
     ]
   },
   "devDependencies": {
-    "electron-prebuilt": "^0.36.10",
-    "eslint": "^1.10.3",
+    "electron-prebuilt": "^1.4.13",
+    "eslint": "^3.17.1",
     "eslint-config-features": "^1.1.5",
-    "eslint-config-js": "^4.0.0",
+    "eslint-config-js": "^5.0.0",
     "faucet": "0.0.1",
     "tape": "^4.2.2"
   },
