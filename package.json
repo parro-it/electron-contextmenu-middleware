@@ -6,27 +6,23 @@
   "license": "MIT",
   "author": "parro-it",
   "scripts": {
-    "test": "eslint . && node test | faucet || echo failed",
-    "watch": "nodemon --exec 'npm run test || echo failed'",
+    "test": "ava && xo",
     "start": "electron example.js"
   },
-  "keywords": [],
+  "keywords": ["electron", "context", "context menu", "menu", "contextmenu", "middleware"],
   "engines": {
     "node": ">=4"
   },
-  "eslintConfig": {
-    "extends": [
-      "js",
-      "features"
-    ]
-  },
   "devDependencies": {
-    "electron-prebuilt": "^1.4.13",
-    "eslint": "^3.17.1",
-    "eslint-config-features": "^1.1.5",
-    "eslint-config-js": "^5.0.0",
-    "faucet": "0.0.1",
-    "tape": "^4.2.2"
+    "ava": "^0.18.2",
+    "electron": "^1.6.2",
+    "xo": "^0.18.1"
+  },
+  "xo": {
+    "envs": [
+      "browser",
+      "node"
+    ]
   },
   "files": [
     "index.js"

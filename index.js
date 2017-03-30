@@ -1,8 +1,8 @@
 'use strict';
 
 const CoMws = require('comws');
-let context = new CoMws();
 
+let context = new CoMws();
 
 function run(elm, click) {
 	const menu = [];
@@ -27,24 +27,23 @@ function onContextmenu(e) {
 				const menu = Menu.buildFromTemplate(template);
 				menu.popup(remote.getCurrentWindow(), click.x, click.y);
 			}
-
 		})
 		.catch(err => process.stderr.write(err.stack + '\n'));
 }
 
-exports.reset = function reset() {
+function reset() {
 	context = new CoMws();
-};
+}
 
-exports.use = function use(mw) {
+function use(mw) {
 	if (typeof mw !== 'function') {
-		throw new Error('Function middleware argument required.');
+		throw new TypeError('Function middleware argument required.');
 	}
 	context.use(mw);
 	return mw;
-};
+}
 
-exports.activate = function activate() {
+function activate() {
 	if (document.body) {
 		document.body.addEventListener('contextmenu', onContextmenu);
 	} else {
@@ -52,8 +51,10 @@ exports.activate = function activate() {
 			document.body.addEventListener('contextmenu', onContextmenu);
 		});
 	}
+}
 
+module.exports = {
+	activate, use, reset,
+	__test: {run}
 };
-
-exports.__test = { run };
 

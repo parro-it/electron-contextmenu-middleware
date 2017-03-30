@@ -55,7 +55,8 @@ npm-debug.log
 .LSOverride
 
 # Icon must end with two \r
-Icon
+Icon
+
 
 # Thumbnails
 ._*
@@ -80,3 +81,4 @@ Temporary Items
 # Linux trash folder which might appear on any partition or disk
 .Trash-*
 
+yarn.lock
