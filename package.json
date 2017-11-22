@@ -21,8 +21,8 @@
     "node": ">=4"
   },
   "devDependencies": {
+    "electron": "^1.7.9",
     "ava": "^0.23.0",
-    "electron": "^1.6.2",
     "xo": "^0.18.1"
   },
   "xo": {
